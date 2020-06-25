@@ -48,7 +48,7 @@ python main.py --coco_path /PATH/TO/DATASET --epochs /NUM/OF/EPOCHS --batch_size
 
   <img src="https://i.ibb.co/CK7h4Rm/dataset11.png" width="600">
 
-Model nằm [tại đây]()
+Model nằm [tại đây](https://drive.google.com/file/d/1-A8NHy1i669uHmgjeGDN1V_0Vyu9mHcF/view?usp=sharing)
 
 
 - Đối với bộ dữ liệu thứ 2, tụi mình train qua 500 epochs và thu được kết quả như sau:
