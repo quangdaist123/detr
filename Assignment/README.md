@@ -1,14 +1,45 @@
-# Mở đầu
+# Sử dụng mô hình DETR để xác định người đeo khẩu trang trong ảnh 
 
-Đây là repository phục vụ cho việc dạy học khóa AI_ML 05/2020 của CrossTech
+Bài toán này sử dụng mô hình Detection Transformer (DETR) được giới thiệu trong [paper](https://arxiv.org/pdf/2005.12872.pdf) của nhóm những nhà nghiên cứu trong đội ngũ [FacebookAI](https://ai.facebook.com/research/publications/end-to-end-object-detection-with-transformers)
 
-## Yêu cầu với mentees
+## Bộ dữ liệu
 
-- Các bạn tạo mỗi người 1 folder riêng. Ghi họ tên của mình bằng **chữ thường, không dấu, thay khoảng trắng bằng dấu _**
-- Sau đó các bạn tách riêng cho mình mỗi người 1 branch
-- Mọi commit của các bạn sẽ được push lên branch của mình
+Nhóm mình tạo 2 bộ dataset với những đặc trưng riêng biệt: 
+ - [Một bộ](https://drive.google.com/drive/folders/1XUR4ci88ABahff3TOxoT9GuxbjP7NwCq?usp=sharing) gồm những hình người đeo khẩu trang ở nhiều góc độ khác nhau. Được trích từ [đây](https://www.kaggle.com/andrewmvd/face-mask-detection)
+ - [Một bộ](https://drive.google.com/drive/folders/1i0aN3Si202GC6c08WJGYs3GKIJNUB-dY?usp=sharing) gồm nhiều hình chân dung được thêm khẩu trang tự động. Được trích từ [đây](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
 
-## Một số lưu ý khi dùng git
+Bộ dữ liệu đầu vào được xây dựng theo cấu trúc bộ dữ liệu của [http://cocodataset.org](http://cocodataset.org/#download) năm 2017:
+```
+path/to/dataset/
+  annotations/  # annotation json files
+  train2017/    # train images
+  val2017/      # val images
+```
+
+
+## Training
+
+
+
+Đầu tiên, clone repository mô hình DETR về máy:
+```
+git clone https://github.com/facebookresearch/detr.git
+```
+Cài đặt PyTorch 1.5+ and torchvision 0.6+:
+```
+conda install -c pytorch pytorch torchvision
+```
+Cài đặt pycocotools and scipy:
+```
+conda install cython scipy
+pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+```
+Tải [pretrained model](https://drive.google.com/file/d/1LOjGPqkPvBUWLjF_gQsU9Kt0n_QB9uvq/view?usp=sharing) đã được lược bỏ phần classification head
+
+Training bộ dữ liệu mới từ checkpoint sẵn có
+```
+python main.py --coco_path /PATH/TO/DATASET --epochs /NUM/OF/EPOCHS --batch_size= /YOUR/BATCH/SIZE --output_dir= /YOUR/OUTPUT/FOLDER --resume="detr-r50_no-class-head.pth"
+```
 
 - Nên git pull branch master. Sau đó merge master vào branch của mình. Rồi mới commit và push code
 - Các bạn có thể tham khảo code của nhau bằng cách switch sang branch của bạn khác. Nhưng **tuyệt đối** không được sửa code của người khác và commit lên
