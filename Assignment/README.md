@@ -44,16 +44,3 @@ python main.py --coco_path /PATH/TO/DATASET --epochs /NUM/OF/EPOCHS --batch_size
 - Nên git pull branch master. Sau đó merge master vào branch của mình. Rồi mới commit và push code
 - Các bạn có thể tham khảo code của nhau bằng cách switch sang branch của bạn khác. Nhưng **tuyệt đối** không được sửa code của người khác và commit lên
 
-## Timeline
-| Tuần | Ngày | Nội dung |
-| -------      |  ------  |:---------|
-| 1   | 25/05/2020   | Introduce to Machine Learning |
-| 2 | 29/05/2020 | Your first model: Fashion MNIST|
-| 3  |      01/06/2020    | Introduce to CNNs |
-| 4  |     05/06/2020     | Overfitting problem |
-| 5  |     08/06/2020     | Tranfer Learning |
-| 6  |     12/06/2020     | Authentication |
-| 7  |     15/06/2020     | The Workflow ò Machine Learning |
-| 8  |     19/06/2020     | Summary |
-| 9  |     22/06/2020     | Final Report |
-
