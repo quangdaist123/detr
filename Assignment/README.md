@@ -41,6 +41,19 @@ Training bộ dữ liệu mới từ checkpoint sẵn có
 python main.py --coco_path /PATH/TO/DATASET --epochs /NUM/OF/EPOCHS --batch_size= /YOUR/BATCH/SIZE --output_dir= /YOUR/OUTPUT/FOLDER --resume="detr-r50_no-class-head.pth"
 ```
 
-- Nên git pull branch master. Sau đó merge master vào branch của mình. Rồi mới commit và push code
-- Các bạn có thể tham khảo code của nhau bằng cách switch sang branch của bạn khác. Nhưng **tuyệt đối** không được sửa code của người khác và commit lên
+## Models
+
+
+- Nhóm mình sử dụng bộ dữ liệu 1 để train model với 110 epochs và kết quả tốt nhất là:
+
+  <img src="https://i.ibb.co/CK7h4Rm/dataset11.png" width="600">
+
+Model nằm [tại đây]()
+
+
+- Đối với bộ dữ liệu thứ 2, tụi mình train qua 500 epochs và thu được kết quả như sau:
+
+ <img src="https://i.ibb.co/rpG0bTX/dataset1.png" width="600">
+
+Model nằm [tại đây](https://drive.google.com/file/d/1-cIrb326EOhvPYltzN8Kjab_JNCCq6pn/view?usp=sharing)
 
